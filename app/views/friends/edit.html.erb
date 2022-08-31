@@ -1,10 +1,9 @@
 <h1>Editing friend</h1>
-
+<br />
 <%= render "form", friend: @friend %>
-
 <br>
 
 <div>
-  <%= link_to "Show this friend", @friend %> |
-  <%= link_to "Back to friends", friends_path %>
+  <%= link_to "View Profile", @friend, class: "btn btn-sm btn-outline-success" %>
+  <%= link_to "Back", friends_path, class: "btn btn-sm bg-custom" %>
 </div>
