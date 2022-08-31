@@ -1,1 +1,15 @@
 @import "bootstrap";
+
+.bg-custom{
+  background-color: #d0deff;
+}
+
+.cover-height{
+  height: 300px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
