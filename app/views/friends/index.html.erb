@@ -4,24 +4,22 @@
 <table class="table table-hover">
   <thead class="bg-custom">
     <tr>
-      <th scope="col">First name</th>
-      <th scope="col">Last name</th>
+      <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Facebook</th>
-      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @friends.each do |friend| %>
-      <tr>
-        <td><%= friend.first_name %></td>
-        <td><%= friend.last_name %></td>
-        <td><%= friend.email %></td>
-        <td><%= friend.phone %></td>
-        <td><%= friend.facebook %></td>
-        <td><%=link_to "View Profile", friend, class: "btn btn-sm btn-outline-success " %></td>
-      </tr>
+      <% if friend.user == current_user %>
+        <tr>
+          <td><%= link_to friend.first_name + ' ' + friend.last_name, friend, class: "link-dark" %>
+          <td><%= friend.email %></td>
+          <td><%= friend.phone %></td>
+          <td><%= friend.facebook %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
